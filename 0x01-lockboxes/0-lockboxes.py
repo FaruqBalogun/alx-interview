@@ -1,20 +1,13 @@
 #!/usr/bin/python3
-"""Our module for working with lockboxes.
+'''Our module for working with lockboxes.
+'''
 
-This module provides a function canUnlockAll(boxes) that checks whether all the boxes in a list of boxes containing the keys
-(indices) to other boxes can be unlocked, given that the first box is unlocked.
-"""
 
 def canUnlockAll(boxes):
-     """Check if all the boxes in a list of boxes can be unlocked, given that the first
+    '''To check if all the boxes in a list of boxes containing the keys
+    (indices) to other boxes can be unlocked given that the first
     box is unlocked.
-
-    Args:
-        boxes (list): A list of boxes where each box contains a list of indices to other boxes.
-
-    Returns:
-        bool: True if all boxes can be unlocked, False otherwise.
-    """
+    '''
     n = len(boxes)
     seen_boxes = set([0])
     unseen_boxes = set(boxes[0]).difference(set([0]))
@@ -26,4 +19,3 @@ def canUnlockAll(boxes):
             unseen_boxes = unseen_boxes.union(boxes[boxIdx])
             seen_boxes.add(boxIdx)
     return n == len(seen_boxes)
-
