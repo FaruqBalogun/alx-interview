@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def validUTF8(data):
     # Helper function to check if a byte is a valid start byte
     # of a UTF-8 character
